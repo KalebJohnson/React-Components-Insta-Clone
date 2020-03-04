@@ -5,13 +5,21 @@ import "./Posts.css";
 import dummyData from "../../dummy-data.js";
 // import data 
 
-const PostsPage = () => {
-  const [data, setdata] = useState(0);
+const PostsPage = (props) => {
+
+
+
   return (
     <div className="posts-container-wrapper">
-      {
-        <Post/>
-      }
+      
+      {props.dummyData.map(item => {
+        return ( 
+            <Post 
+            post={item}
+        />
+        );
+      })}
+
     </div>
   );
 };
