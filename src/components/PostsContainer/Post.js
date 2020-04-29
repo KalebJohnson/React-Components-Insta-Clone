@@ -5,19 +5,19 @@ import LikeSection from "./LikeSection";
 import PostHeader from "./PostHeader";
 
 import "./Posts.css";
-
+const border = {
+border:'solid red'
+}
 // pass props in this file to
 const Post = props => {
   // set up state for the likes
-const [likes, setlikes] = useState(0);
-
+const [likes, setLikes] = useState(props.post.likes);
+console.log(props)
   return (
     <div className="post-border">
       <PostHeader
         username={props.post.username}
-        thumbnailUrl={
-          props.post.thumbnailUrl
-        }
+        thumbnailUrl={props.post.thumbnailUrl}
       />
       <div className="post-image-wrapper">
         <img
@@ -26,15 +26,9 @@ const [likes, setlikes] = useState(0);
           src={props.post.imageUrl}
         />
       </div>
-      <LikeSection 
-          onClick={() => {
-            setlikes(likes + 1);
-          }}
-          />
-      <CommentSection
-        postId={props.post.imageUrl}
-        comments={props.post.comments}
-      />
+      <LikeSection likes = {props.post.likes}/>
+      <CommentSection comments = {props.post.comments}
+      postId={props.post.imageUrl}/> 
     </div>
   );
 };

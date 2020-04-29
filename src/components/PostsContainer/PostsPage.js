@@ -7,15 +7,15 @@ import dummyData from "../../dummy-data.js";
 
 const PostsPage = (props) => {
 
-
-
+  console.log(props)
+  const [post,setpost] = useState(dummyData)
   return (
     <div className="posts-container-wrapper">
       
-      {props.dummyData.map(item => {
+      {dummyData.map(post => {
         return ( 
             <Post 
-            post={item}
+            post={post}
         />
         );
       })}

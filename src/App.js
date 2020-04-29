@@ -13,11 +13,15 @@ import dummyData from "./dummy-data";
 
 
 const App = () => {
-const [data,setdata] = useState(dummyData)
+  
+
+
   return (
+    
     <div className="App">
-      <PostsPage dummyData={data}/>
       <SearchBar/>
+      <PostsPage/>
+
       
     </div>
   );
